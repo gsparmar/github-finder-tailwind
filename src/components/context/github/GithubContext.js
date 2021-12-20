@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const GithubContext = createContext();
 
-const GITHUB_URL = process.env.REACT_APP_GITHUB_URL;
+const GITHUB_URL = 'https://api.github.com'
 
 /* removed the token due to it expiring 
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
