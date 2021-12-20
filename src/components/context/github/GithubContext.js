@@ -4,8 +4,10 @@ import axios from 'axios';
 const GithubContext = createContext();
 
 const GITHUB_URL = process.env.REACT_APP_GITHUB_URL;
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
+/* removed the token due to it expiring 
+const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+*/
 export const GithubProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
@@ -14,7 +16,6 @@ export const GithubProvider = ({ children }) => {
 
   const github = axios.create({
     baseURL: GITHUB_URL,
-    headers: { Authorization: `token ${GITHUB_TOKEN}` },
   });
 
   // get search result
